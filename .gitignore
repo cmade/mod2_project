@@ -1,0 +1,25 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore the build directory
+/dist
+
+# The file containing environment variables 
+.env
+config/default.json
+config/production.json
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
+
+# Ignore client side files
+client/build
+client/.eslintcache
+
+
