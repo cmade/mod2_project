@@ -1,8 +1,18 @@
 import React from 'react';
 //Bring in link fromm the react router dom to link components
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-const Landing = () => {
+//Bring in connect to interact with the state
+import { connect } from 'react-redux';
+
+//Bring in proptypes
+import PropTypes from 'prop-types';
+
+const Landing = ({ isAuthenticated }) => {
+  //If logged in redirect user to their dashboard instead of the landing page
+  if (isAuthenticated) {
+    return <Redirect to='dashboard' />;
+  }
   return (
     <section className='landing'>
       <div>
@@ -27,4 +37,12 @@ const Landing = () => {
     </section>
   );
 };
-export default Landing;
+
+Landing.protoTypes = {
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps)(Landing);

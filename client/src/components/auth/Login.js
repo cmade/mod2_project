@@ -2,10 +2,19 @@
 import React, { Fragment, useState } from 'react';
 
 //Bring in link
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
+//Bring in connect from Redux
+import { connect } from 'react-redux';
+
+//Bring in proptypes
+import PropTypes from 'prop-types';
+
+//Bring in login
+import { login } from '../../actions/auth';
 
 //Each input needs to have its own state, they also need to have an OnChange handler so when we type in the input it updates the state
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   //Our state is going to be form data with all the field values. Our second parameter is the function we will call to update the state.
   const [formData, setFormData] = useState({
     email: '',
@@ -21,8 +30,14 @@ const Login = () => {
   //On subit function
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('SUCCESS');
+    login(email, password);
   };
+
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
+
   return (
     <Fragment>
       <h1 className='large text-primary'>Sign In </h1>
@@ -58,4 +73,14 @@ const Login = () => {
     </Fragment>
   );
 };
-export default Login;
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+//Bring in the authenticated state
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps, { login })(Login);

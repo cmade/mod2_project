@@ -20,6 +20,9 @@ const request = require('request');
 //Bring the secret and client id for github
 const config = require('config');
 
+//Bring in the post model
+const Post = require('../../models/Post');
+
 //Create a route,
 //Route       GET api/profile/me
 //Description Get current users profile
@@ -174,6 +177,7 @@ router.delete('/', auth, async (req, res) => {
     // Remove profile
     // Remove user
     await Promise.all([
+      Post.deleteMany({ user: req.user.id }),
       Profile.findOneAndRemove({ user: req.user.id }),
       User.findOneAndRemove({ _id: req.user.id }),
     ]);

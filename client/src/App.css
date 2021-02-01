@@ -128,10 +128,10 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
+  background: #002288;
+  color: rgb(255, 255, 255);
+  padding: 0.2rem 1rem;
+  font-size: 0.9rem;
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -290,7 +290,7 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 0.2rem;
   text-align: left;
 }
 
@@ -309,6 +309,7 @@ button {
   width: 100%;
   top: 0;
   opacity: 0.9;
+  background-color: floralwhite;
 }
 
 .navbar ul {
@@ -340,6 +341,7 @@ button {
   bottom: 0;
   opacity: 0.9;
   text-align: center;
+  background: #f5f5f5;
 }
 /* Landing Page */
 .landing {
@@ -506,7 +508,19 @@ button {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
-
+/*Tablet style*/
+@media (max-width: 768px) {
+  .landing-left {
+    width: 300px;
+  }
+  .landingImg {
+    background: url('./img/landingImg.png') center/cover;
+    height: 260px;
+    width: 300px;
+    margin-top: 50px;
+    justify-content: center;
+  }
+}
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -592,5 +606,24 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+  .landing-inner {
+    height: 80%;
+    width: 50%;
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .landingImg {
+    background: url('./img/landingImg.png') center/cover;
+    height: 260px;
+    width: 300px;
+    margin-top: 50px;
+    justify-content: center;
+    margin-right: 30px;
   }
 }

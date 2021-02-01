@@ -30,7 +30,7 @@ router.post(
   '/',
   //Validation for name, email and password
   [
-    check('name', 'Name is require').not().isEmpty(),
+    check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
     check(
       'password',

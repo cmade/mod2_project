@@ -2,10 +2,22 @@
 import React, { Fragment, useState } from 'react';
 
 //Bring in link
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
+//Connect to redux by bringin in connect from redux
+import { connect } from 'react-redux';
+
+//Bring in the set alert action
+import { setAlert } from '../../actions/alert';
+
+//Bring in the register from the auth file
+import { register } from '../../actions/auth';
+
+//Bring in proptypes
+import PropTypes from 'prop-types';
 
 //Each input needs to have its own state, they also need to have an OnChange handler so when we type in the input it updates the state
-const Register = () => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   //Our state is going to be form data with all the field values. Our second parameter is the function we will call to update the state.
   const [formData, setFormData] = useState({
     name: '',
@@ -25,11 +37,18 @@ const Register = () => {
     e.preventDefault();
     //Check to see if the passwords match
     if (password !== password2) {
-      console.log('Passwords do not match');
+      //This will be passed into our setAlert actions
+      setAlert('Passwords do not match', 'danger');
     } else {
-      console.log(formData);
+      //This will take the form data for the name, email, and passord and pass it into the register action
+      register({ name, email, password });
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
+
   return (
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
@@ -43,7 +62,7 @@ const Register = () => {
             placeholder='Name'
             name='name'
             value={name}
-            onChange={onChange}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -89,4 +108,18 @@ const Register = () => {
     </Fragment>
   );
 };
-export default Register;
+
+//Set the register proptypes to an alert object and the register
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+//Bring in the authenticated state
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+//Whenever we use connect we have to export it alongside the component. You also want to pass your actions through the connect. The first parameter is any state you want to map and the second parameter is an object with any actions you want to use.
+export default connect(mapStateToProps, { setAlert, register })(Register);

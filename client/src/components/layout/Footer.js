@@ -1,14 +1,12 @@
 import React from 'react';
-//Bring in link fromm the react router dom to link components
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className='footer'>
-      <p>
-        {' '}
-        Made with <i class='fas fa-heart'></i> by Clive
-      </p>{' '}
+      <p style={{ fontSize: '18px' }}>
+        Made with <i className='fas fa-heart' style={{ color: 'red' }}></i> by
+        Clive
+      </p>
     </footer>
   );
 };
