@@ -23,7 +23,6 @@ import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 
 //Bring in the education component
-import education from './Experience';
 import Education from './Education';
 
 const Dashboard = ({
@@ -34,7 +33,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   console.log(profile);
   //if the profile and loading havent loaded yet, show the spinner
   return profile && loading == null ? (

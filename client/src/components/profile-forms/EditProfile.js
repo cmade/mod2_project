@@ -10,6 +10,20 @@ import { createProfile, getCurrentProfile } from '../../actions/profile';
 
 //Bring in connect from redux
 import { connect } from 'react-redux';
+const initialState = {
+  company: '',
+  website: '',
+  location: '',
+  status: '',
+  skills: '',
+  githubusername: '',
+  bio: '',
+  twitter: '',
+  facebook: '',
+  linkedin: '',
+  youtube: '',
+  instagram: '',
+};
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -17,29 +31,14 @@ const EditProfile = ({
   getCurrentProfile,
   history,
 }) => {
-  const [formData, setFormData] = useState({
-    company: '',
-    website: '',
-    location: '',
-    status: '',
-    skills: '',
-    githubusername: '',
-    bio: '',
-    twitter: '',
-    facebook: '',
-    linkedin: '',
-    youtube: '',
-    instagram: '',
-  });
+  const [formData, setFormData] = useState(initialState);
 
-  //Toggle the display of inputs
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
-  //USeEffect will populate the form with current profile data
   useEffect(() => {
     if (!profile) getCurrentProfile();
     if (!loading && profile) {
-      const profileData = { ...formData };
+      const profileData = { ...initialState };
       for (const key in profile) {
         if (key in profileData) profileData[key] = profile[key];
       }
@@ -52,7 +51,6 @@ const EditProfile = ({
     }
   }, [loading, getCurrentProfile, profile]);
 
-  //Destructor
   const {
     company,
     website,
@@ -68,28 +66,25 @@ const EditProfile = ({
     instagram,
   } = formData;
 
-  //The text inside of the form field will be inserted into the formdata
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  //When we click submit it will trigger the create profile action and make a request to the profile endpoint
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history, true);
+    createProfile(formData, history, profile ? true : false);
   };
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Profile</h1>
+      <h1 className='large text-primary'>Edit Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Let's get some information to make your
-        profile stand out
+        <i className='fas fa-user' /> Add some changes to your profile
       </p>
-      <small>* = required fields</small>
+      <small>* = required field</small>
       <form className='form' onSubmit={onSubmit}>
         <div className='form-group'>
           <select name='status' value={status} onChange={onChange}>
-            <option value='0'>* Select Professional Status</option>
+            <option>* Select Professional Status</option>
             <option value='Developer'>Developer</option>
             <option value='Junior Developer'>Junior Developer</option>
             <option value='Senior Developer'>Senior Developer</option>
@@ -170,7 +165,7 @@ const EditProfile = ({
             name='bio'
             value={bio}
             onChange={onChange}
-          ></textarea>
+          />
           <small className='form-text'>Tell us a little about yourself</small>
         </div>
 
@@ -243,6 +238,7 @@ const EditProfile = ({
             </div>
           </Fragment>
         )}
+
         <input type='submit' className='btn btn-primary my-1' />
         <Link className='btn btn-light my-1' to='/dashboard'>
           Go Back
