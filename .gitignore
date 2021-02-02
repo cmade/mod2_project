@@ -11,7 +11,7 @@ logs
 # The file containing environment variables 
 .env
 config/default.json
-
+config/production.json
 
 # Ignore IDE specific files
 .idea/
