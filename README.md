@@ -27,13 +27,13 @@ See below for a mockup of the app:
 
 # The approach taken:
 
-I used a trello board to organize tasks from the user stories to complete.
+I used a trello board to organize tasks, and manage progress.
 
 I used figma to create the design for the components.
 
-I built out the backend first using MongoDB and ExpressJS.
+I built out the backend first using MongoDB, Express, Node.
 
-Then I build the frontend using ReactJS and Redux.
+Then I built the frontend using React and Redux.
 
 # Unsolved problems:
 
