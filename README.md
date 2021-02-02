@@ -6,9 +6,9 @@ Code Club House's purpose is to have a place where software engineering students
 
 Here are some of the technologies used:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Redux for state managment.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Redux for state management.
 
-MongoDB for the backend.
+MongoDB, Express and Node for the backend.
 
 [Font Awesome](https://fontawesome.com/) was also used.
 
