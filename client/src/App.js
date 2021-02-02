@@ -25,7 +25,7 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 //Redux
-import { Provider, provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 
 //Import css file

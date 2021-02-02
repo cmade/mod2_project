@@ -2,7 +2,7 @@
 import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
 
 const initialState = [];
-//This is a function that takes in state and an action. An action is going to be dispatched to an actions file. Below we start with the initial state
+//This is a function that takes in state and an action. An action is going to be dispatched to an reducer file. Below we start with the initial state
 //It will export the function that takes in the state and an action
 //Depending on the type we need to decide what will be send down as the state
 //We dispatch the type set alert
