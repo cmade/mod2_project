@@ -43,31 +43,30 @@ I discovered that you can create a script that can run in the backend on Heroku 
 
 # User stories:
 
-User Story: Design in Figma
-User Story: Create navbar
-User Story: Connect MongoDB Database for backend
-User Story: npm install mongoose for data modeling
-User Story: Uses React, and Redux
-User Story: Using a 3rd party api (Github and the backend)
-User Story: Make use of async actions to send data to and receive data from a server
-User Story: Project code is pushed to a public Git repository
-User Story: Use the create-react-app generator to start your project.
-User Story: Follow the instructions on this repo to setup the generator: create-react-app
-User Story: Your app should have one HTML page to render your react-redux application
-User Story: The Application must make use of react-router and proper RESTful routing
-User Story: Incorporating a new technology not taught in the program
-User Story: App renders in browser
-User Story: Be able to register as a user
-User Story: User is logged in or user is logged out
-User Story: The code should be written in ES6 as much as possible
-User Story: The code should be written in ES6 as much as possible
-User Story: There should be 2 container components
-User Story:There should be 5 stateless components
-User Story: There should be 3 or more routes
-User Story: Use Redux middleware to respond to and modify state change
-User Story: Your client-side application should handle the display of data with minimal data manipulation
-User Story: Has readme.md file at the root of repository
-User Story: readme file clearly documents the purpose of the project as a problem statement
+User Story: Design in Figma<br />
+User Story: Create navbar<br />
+User Story: Connect MongoDB Database for backend<br />
+User Story: npm install mongoose for data modeling<br />
+User Story: Uses React, and Redux<br />
+User Story: Using a 3rd party api (Github and the backend)<br />
+User Story: Make use of async actions to send data to and receive data from a server<br />
+User Story: Project code is pushed to a public Git repository<br />
+User Story: Use the create-react-app generator to start your project.<br />
+User Story: Follow the instructions on this repo to setup the generator: create-react-app<br />
+User Story: Your app should have one HTML page to render your react-redux application<br />
+User Story: The Application must make use of react-router and proper RESTful routing<br />
+User Story: Incorporating a new technology not taught in the program<br />
+User Story: App renders in browser<br />
+User Story: Be able to register as a user<br />
+User Story: User is logged in or user is logged out<br />
+User Story: The code should be written in ES6 as much as possible<br />
+User Story: There should be 2 container components<br />
+User Story: There should be 5 stateless components<br />
+User Story: There should be 3 or more routes<br />
+User Story: Use Redux middleware to respond to and modify state change<br />
+User Story: Your client-side application should handle the display of data with minimal data manipulation<br />
+User Story: Has readme.md file at the root of repository<br />
+User Story: readme file clearly documents the purpose of the project as a problem statement<br />
 User Story: readme file has embedded link (not url) to publicly deployed app
 
 # Notes:
