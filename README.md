@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Wireframe created using ...
 
-Heroku was used to deploy the app: Click this link to view the [Mid Mod Project 2](https://lit-inlet-84195.herokuapp.com/)
+Heroku was used to deploy the app: Click this link to view the [Mod 2 Project](https://lit-inlet-84195.herokuapp.com/)
 
 See below for a gif of the app:
 
