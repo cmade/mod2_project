@@ -31,7 +31,7 @@ I used a trello board to organize tasks from the user stories to complete.
 
 I used figma to create the design for the components.
 
-I built out the backend first useing MongoDB and ExpressJS.
+I built out the backend first using MongoDB and ExpressJS.
 
 Then I build the frontend using ReactJS and Redux.
 
